@@ -5,9 +5,12 @@ import { InputText } from "../components/InputText";
 import { useState } from "react";
 import { ROUTES } from "../routes/routes";
 import { Link as RouterLink } from 'react-router-dom';
+import { t } from "i18next";
 
 export function SignUp() {
     const [showPassword, setShowPassword] = useState<boolean>(false);
+
+    
 
     return (
       <div className={'flex'}>
@@ -15,24 +18,24 @@ export function SignUp() {
           <BrandLogo />
           <MainCard>
             <CardBody>
-              <h1 className={"text-2xl font-semibold"}>SIGN UP</h1>
+              <h1 className={"text-2xl font-semibold"}>{t("signUp")}</h1>
             </CardBody>
             <Divider />
             <CardBody className={'grid gap-4'}>
               <div className={'grid grid-cols-2 gap-4'}>
-                <InputText label={'first name'} placeholder={'insert first name'} required />
-                <InputText label={'last name'} placeholder={'insert last name'} required />
+                <InputText label={t('firstName')} placeholder={'insert first name'} required />
+                <InputText label={t('lastName')} placeholder={'insert last name'} required />
               </div>
-              <InputText label={'email'} placeholder={'insert last email'} required />
+              <InputText label={t('email')} placeholder={t('insertEmail')} required />
               <InputText
-                label={'password'}
-                placeholder={'insert password'}
+                label={t('password')}
+                placeholder={t('insertPassword')}
                 required
                 type={showPassword ? 'text' : 'password'}
               />
               <InputText
-                label={'confirmation password'}
-                placeholder={'insert confirmation password'}
+                label={t('confirmationPassword')}
+                placeholder={t('insertConfirmationPassword')}
                 required
                 type={showPassword ? 'text' : 'password'}
               />
@@ -40,7 +43,7 @@ export function SignUp() {
                 control={
                   <Checkbox onChange={(_, e) => setShowPassword(e)} checked={showPassword} defaultChecked={false} />
                 }
-                label="show password"
+                label={t("showPassword")}
               />
               <p>
                 {'already have account ? '}{' '}

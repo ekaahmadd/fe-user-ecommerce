@@ -1,0 +1,18 @@
+{
+    "validation" : {
+        "required" : "{{name}} is required",
+        "email_not_valid" : "email not valid"
+    },
+
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmationPassword": "Confirmation Password",
+    "showPassword": "show password",
+    "insertPassword": "insert password",
+    "insertConfirmationPassword": "insert confirmation password",
+    "insertEmail": "insert email"
+}

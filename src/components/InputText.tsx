@@ -12,8 +12,10 @@ export function InputText(props: IProps) {
         name={props.name} // Corrected here
         onBlur={props.onBlur}
         onChange={props.onChange}
-        helperText={props.errorMessage || props.helperText}
-        placeholder={props.placeholder} // Corrected here
+        error={!!props.errorMessage}
+        helperText={props.errorMessage}
+        placeholder={props.placeholder}
+        value={props.value} // Corrected here
       />
     </div>
   );
@@ -25,7 +27,8 @@ interface IProps {
   label?: string;
   required?: boolean;
   id?: string;
-  errorMessage?: string;
+  value?: string;
+  errorMessage?: any;
   helperText?: string;
   type?: React.InputHTMLAttributes<unknown>['type'];
   onChange?: OutlinedInputProps['onChange'];
