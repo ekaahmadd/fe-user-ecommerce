@@ -10,6 +10,14 @@ export const themeConfig = createTheme({
     },
   },
   components: {
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          borderRadius: 1,
+          minWidth: 300,
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
