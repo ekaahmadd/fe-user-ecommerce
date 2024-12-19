@@ -3,6 +3,8 @@ import { InputText } from '../components/InputText';
 import { BrandLogo } from '../components/BrandLogo';
 import { CardBody, MainCard } from '../components/MainCard';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../routes/routes';
 
 export function SignIn() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -18,8 +20,24 @@ export function SignIn() {
           </CardBody>
           <CardBody className={'grid gap-4'}>
             <InputText type={'email'} label={'Email'} placeholder={'insert email'} required />
-            <InputText type={showPassword ? 'text' : 'password'} label={'Password'} placeholder={'insert password'} required />
-            <FormControlLabel control={<Checkbox onChange={(_,e) => setShowPassword(e)} checked={showPassword} defaultChecked={false} />} label="show password" />
+            <InputText
+              type={showPassword ? 'text' : 'password'}
+              label={'Password'}
+              placeholder={'insert password'}
+              required
+            />
+            <FormControlLabel
+              control={
+                <Checkbox onChange={(_, e) => setShowPassword(e)} checked={showPassword} defaultChecked={false} />
+              }
+              label="show password"
+            />
+            <p>
+              {'dont have account ? '}{' '}
+              <Link className={'text-primary-main hover: underline'} to={ROUTES.SignUp()}>
+                sign up here
+              </Link>
+            </p>
             <Button variant={'contained'}>sign in</Button>
           </CardBody>
         </MainCard>
