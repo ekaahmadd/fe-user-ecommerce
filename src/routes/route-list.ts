@@ -17,7 +17,7 @@ export const routeList: IRouteList[] = [
   {
     element: HomePage,
     path: ROUTES.HomePage(),
-    type: PageTypeEnum.FULL_PAGE,
+    type: PageTypeEnum.PRIMARY,
   },
   {
     element: ProductPage,
